@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question2</title>
+</head>
+<body>
+	<fieldset>
+	<legend>  <h3>Replace</h3> </legend>
+	<form onsubmit="fun()">
+		<table cellpadding="10">
+			<tr>
+				<td><label>Enter number of calls</label></td>
+				<td><input type="text" name="call" id="call"></td>
+			</tr>
+			<tr>
+				<td>Enter SMS</td>
+				<td><input type="text" name="msg" id="msg"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" vlaue="Check" /></td>
+			</tr>
+		</table>
+	</form>	
+</fieldset>
+
+
+<script type="text/javascript">
+	function fun(){
+		var calls = document.getElementById("call").value;
+		var msg = document.getElementById("msg").value;
+		calls = parseFloat(calls);
+		msg = parseFloat(msg);
+
+		if (calls <= 50){
+			text = (50/100 * calls);   
+		}
+
+		else if (calls > 50 && calls <=150){
+		    text = (70/100) * (calls-50) + 25; 
+		}
+
+		else if ( calls > 150 && calls <= 300){
+		    text = (85/100)* (calls - 150) + 95;     
+		}
+
+		else if ( calls > 300){ 
+		    text = (95/100) * (calls - 300) + 222.5;    
+		}
+		
+
+
+		// for messages -----------
+
+		if (msg <= 50){
+			msg_charge = 0;
+		}
+		else if(msg > 50 && msg <= 200){
+			msg_charge = (25/100) * (msg - 50);
+		}
+		else if(msg > 200 && msg <= 400){
+			msg_charge = (40/100) * (msg - 200) + 37.5;
+		}
+		else if(msg > 400){
+			msg_charge = (40/100) * (msg - 400) + 117.5;
+		}
+		
+		let total = msg_charge + text;
+		alert("Total Charges = " +  total + "/-");
+	}
+</script>
+
+</body>
+</html>
