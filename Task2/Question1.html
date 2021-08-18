@@ -1,41 +1,51 @@
+<!-- 
+#Task2
+Referral id :- SIRSS2128
+Name :- Annu Poddar 
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Question 1</title>
 </head>
 <body>
-	<table cellpadding="10">
-		<tr>
-			<td><label>Enter text : </label></td>
-			<td><input type="text" id = "org_val"></td>
-		</tr>
-		<tr>
-			<td><label>Enter word to replace : </label></td>
-			<td><input type="text" id = "rep_val"></td>
-		</tr>
-		<tr>
-			<td><label>Enter word to replaced with: </label></td>
-			<td><input type="text" id = "rep_with"></td>
-		</tr>
-		<tr>
-			<td align = "center" colspan="2"><button width = "20" onclick="fun()">Replace</button></td>
-		</tr>
-	</table>
+	<fieldset>
+		<legend><h3>Replace</h3></legend>
+		<form onsubmit="replace()">
+			<table cellpadding="10">
+				<tr>
+					<td><label>Enter text : </label></td>
+					<td><textarea  rows="5" cols="30" id = "org_val"></textarea></td>
+				</tr>
+				<tr>
+					<td><label>Enter word to replace : </label></td>
+					<td><input type="text" id = "rep_val"></td>
+				</tr>
+				<tr>
+					<td><label>Enter word to replaced with: </label></td>
+					<td><input type="text" id = "rep_with"></td>
+				</tr>
+				<tr>
+					<td align = "center" colspan="2"><input type="submit" value="Replace"/><td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
+	
 	<p id="replaced_text"></p>
 	
 	
 
 	<script type="text/javascript">
-		function fun(){
+		function replace(){
 			org_val = document.getElementById("org_val").value;
 			rep_val = document.getElementById("rep_val").value;
 			rep_with = document.getElementById("rep_with").value;
 
 			rep_txt = org_val.replaceAll(rep_val, rep_with);
 
-			replaced_text = document.getElementById("replaced_text").innerHTML = ("OUTPUT :- " + rep_txt);
-			
-
+			alert("OUTPUT :- " + rep_txt);
 
 		}
 	</script>
